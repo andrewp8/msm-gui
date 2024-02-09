@@ -14,4 +14,9 @@ class MoviesController < ApplicationController
 
     render({ :template => "movie_templates/show" })
   end
+
+  def create
+
+    
+  end
 end
