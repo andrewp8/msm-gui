@@ -23,9 +23,9 @@ class MoviesController < ApplicationController
     @movie.description = params.fetch("query_description")
     @movie.image = params.fetch("query_image")
     @movie.director_id = params.fetch("query_director_id")
-    if @movie.valid?
+    if @movie.director_id.present?
       @movie.save
-      redirect_to("/", { :notice => "Movie created successfully"})
+      redirect_to("/movies", { :notice => "Movie created successfully"})
     else
       redirect_to("/movies", { :notice => "Movie failed to create successfully"})
     end
